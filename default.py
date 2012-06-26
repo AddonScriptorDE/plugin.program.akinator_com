@@ -69,9 +69,6 @@ def nextQuestion(partie, signature, answer, qNr, continued=False):
             elif mode==translation(30005):
               nextQuestion(partie, signature, "1", qNr)
         elif content.find("ouvre_photo(")>=0:
-          fh = open("d:\\html.txt", 'w')
-          fh.write(content)
-          fh.close()
           match=re.compile('ouvre_photo\\("(.+?)",(.+?),"(.+?)"', re.DOTALL).findall(content)
           photo="http://"+language+".akinator.com/"+match[0][0]
           name=match[0][2]
